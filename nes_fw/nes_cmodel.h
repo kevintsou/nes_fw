@@ -1,24 +1,49 @@
 #pragma once
 
-class REG_R16_MR_QINFO
+#define _OUT (int)
+#define _IN	(unsigned int)
+
+class REG
+{
+private:
+	int (REG::* _pOPRFunc)(int);
+	virtual int defCallback(int v);
+public:
+	virtual REG& operator[](unsigned int addr);
+	virtual int operator[](int regaddr);
+};
+
+
+class REG_R16 : public REG
 {
 private:
 	int _inv;
-	unsigned char (REG_R16_MR_QINFO::* _pOPRFunc)(unsigned char);
+	unsigned char (REG_R16::* _pOPRFunc)(unsigned char);
 
+	int defCallback(int v);
 	unsigned char callfundef(unsigned char v);
 	unsigned char callfun1(unsigned char v);
 	unsigned char callfun2(unsigned char v);
 
 public:
-	REG_R16_MR_QINFO(int inv);
-	~REG_R16_MR_QINFO();
+	REG_R16(int inv);
+	~REG_R16();
 
-	//assign value to register
-	unsigned char operator=(unsigned char v);
-	//use signed int as read operator
-	unsigned char operator[](int regaddr);
-	//use unsigned int as write operator
-	REG_R16_MR_QINFO& operator[](unsigned int regaddr);
+	int operator=(int v);
 
+	int operator[](int regaddr);
+	REG_R16& operator[](unsigned int addr);
+
+	REG& operator++(int addr);
+	REG& operator--(int addr);
 };
+
+
+//REG& operator+=(REG a, REG b);
+//REG& operator+=(REG a, int i);
+//REG& operator-=(REG a, REG b);
+//REG& operator-=(REG a, int i);
+REG& operator|=(REG a, REG b);
+REG& operator|=(REG a, int i);
+REG& operator&=(REG a, REG b);
+REG& operator&=(REG a, int i);
