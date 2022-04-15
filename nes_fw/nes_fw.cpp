@@ -17,38 +17,22 @@ int testCode() {
 	//REG_R16 R16_MR_QINFO(123);
 	printf("\n\n");
 	printf("code: R16_MR_QINFO[(unsigned int)2]=3;\n");
-	R16_MR_QINFO[_IN 2] = 3;
+	R16_MR_QINFO[_IN 3] = 3;
 	printf("\n\n");
 	printf("unsigned char getv = R16_MR_QINFO[3];\n");
-	unsigned char getv = R16_MR_QINFO[3];
+	unsigned char getv = R16_MR_QINFO[_OUT 3];
 	printf("get R16_MR_QINFO-->%d\n", getv);
 
-	//printf("\n\n");
-	//R16_MR_QINFO[REG_IN 3]++;
-	//R16_MR_QINFO[REG_IN 3]--;
-
-	//printf("\n\n");
-	//R16_MR_QINFO[REG_IN 3] += 1;
-	//R16_MR_QINFO[REG_IN 3] -= 1;
-
-	//printf("\n\n");
-	//R16_MR_QINFO[REG_IN 3] += R16_MR_QINFO[REG_IN 2];
-	//R16_MR_QINFO[REG_IN 3] -= R16_MR_QINFO[REG_IN 2];
-
 	printf("\n\n");
-	R16_MR_QINFO[_IN 3] &= 1;
 	R16_MR_QINFO[_IN 3] &= 1;
 
 	printf("\n\n");
-	R16_MR_QINFO[_IN 3] &= R16_MR_QINFO[_IN 2];
-	R16_MR_QINFO[_IN 3] &= R16_MR_QINFO[_IN 2];
+	R16_MR_QINFO[_IN 2] &= R16_MR_QINFO[_IN 3];
 
 	printf("\n\n");
 	R16_MR_QINFO[_IN 3] |= 0xFE;
-	R16_MR_QINFO[_IN 3] |= 1;
 
 	printf("\n\n");
-	R16_MR_QINFO[_IN 3] |= R16_MR_QINFO[_IN 2];
 	R16_MR_QINFO[_IN 3] |= R16_MR_QINFO[_IN 2];
 
 	return 0;

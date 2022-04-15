@@ -11,6 +11,9 @@ private:
 public:
 	virtual REG& operator[](unsigned int addr);
 	virtual int operator[](int regaddr);
+
+	int* _pR16_mem;
+	int	regIdx;
 };
 
 
@@ -34,22 +37,11 @@ public:
 	int operator[](int regaddr);
 	REG_R16& operator[](unsigned int addr);
 
-	REG& operator++(int addr);
-	REG& operator--(int addr);
+	REG& operator|=(REG b);
+	REG& operator|=(int i);
+	REG& operator&=(REG b);
+	REG& operator&=(int i);
 };
-
-
-/*
-	operator declaration 
-*/
-//REG& operator+=(REG a, REG b);
-//REG& operator+=(REG a, int i);
-//REG& operator-=(REG a, REG b);
-//REG& operator-=(REG a, int i);
-REG& operator|=(REG a, REG b);
-REG& operator|=(REG a, int i);
-REG& operator&=(REG a, REG b);
-REG& operator&=(REG a, int i);
 
 /*
 	global variable declaration
