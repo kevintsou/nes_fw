@@ -13,9 +13,8 @@
 #endif
 
 
-int main()
-{
-	REG_R16 R16_MR_QINFO(123);
+int testCode() {
+	//REG_R16 R16_MR_QINFO(123);
 	printf("\n\n");
 	printf("code: R16_MR_QINFO[(unsigned int)2]=3;\n");
 	R16_MR_QINFO[_IN 2] = 3;
@@ -51,5 +50,19 @@ int main()
 	printf("\n\n");
 	R16_MR_QINFO[_IN 3] |= R16_MR_QINFO[_IN 2];
 	R16_MR_QINFO[_IN 3] |= R16_MR_QINFO[_IN 2];
+
+	return 0;
 }
 
+
+int main()
+{
+
+#ifdef D_NES_CMODEL
+	initCmodelMem();	// init cmodel mem space
+	initCmodelReg();	// init cmodel reg default value
+#endif
+
+	testCode();
+	return 0;
+}

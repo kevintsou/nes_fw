@@ -39,6 +39,9 @@ public:
 };
 
 
+/*
+	operator declaration 
+*/
 //REG& operator+=(REG a, REG b);
 //REG& operator+=(REG a, int i);
 //REG& operator-=(REG a, REG b);
@@ -47,3 +50,14 @@ REG& operator|=(REG a, REG b);
 REG& operator|=(REG a, int i);
 REG& operator&=(REG a, REG b);
 REG& operator&=(REG a, int i);
+
+/*
+	global variable declaration
+*/
+extern REG_R16 R16_MR_QINFO;
+
+/*
+	function declaration
+*/
+int initCmodelMem();
+int initCmodelReg();
