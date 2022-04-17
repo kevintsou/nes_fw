@@ -18,5 +18,169 @@
     <ClCompile Include="nes_fw.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
+    <ClCompile Include="fw\source\cmain.c">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="fw\source\GPIO.c">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="fw\source\interrupt.c">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="fw\source\M_SPI.c">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="fw\source\pba.c">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="fw\source\pba_test.c">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="fw\source\pba_vc.c">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="fw\source\PH_AP.C">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="fw\source\SCSI_CMD.c">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="fw\source\SPI_Flash.c">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="fw\source\Sys.c">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="fw\source\usb.c">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="fw\source\USB_String.c">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="fw\source\UsbBot.c">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+    <ClCompile Include="fw\source\WDT.c">
+      <Filter>來源檔案</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="fw\include\8051.H">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="fw\include\a.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="fw\include\All.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="fw\include\basetype.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="fw\include\Buf_DEF.H">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="fw\include\DMA_Reg.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="fw\include\FW_Info.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="fw\include\GPIO_API.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="fw\include\GPIO_Reg.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="fw\include\HOST.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="fw\include\Interrupt_API.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="fw\include\IO_Macro.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="fw\include\M_SPI_Reg.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="fw\include\MCU_Reg.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="fw\include\MSPI_API.H">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="fw\include\Operator.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="fw\include\pba.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="fw\include\pba_api.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="fw\include\pba_test.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="fw\include\pba_test_api.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="fw\include\pba_vc.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="fw\include\pba_vc_api.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="fw\include\PH_AP_API.H">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="fw\include\PRAM_Def.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="fw\include\SCSI_CMD_API.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="fw\include\SCSI_Table.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="fw\include\SPI_Flash_API.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="fw\include\SPI_Flash_Reg.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="fw\include\SPI_ROM.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="fw\include\Sys_API.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="fw\include\UART_API.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="fw\include\USB_API.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="fw\include\USB_Def.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="fw\include\USB_String.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="fw\include\UsbReg.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="fw\include\Var_def.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="fw\include\WDT_API.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="fw\include\WDT_Reg.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="nes.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

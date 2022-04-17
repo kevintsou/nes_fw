@@ -116,6 +116,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\kjkin\source\repos\kevintsou\nes_fw\nes_fw\fw\include;C:\Users\kjkin\source\repos\kevintsou\nes_fw\nes_fw;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -139,7 +140,63 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="fw\source\cmain.c" />
+    <ClCompile Include="fw\source\GPIO.c" />
+    <ClCompile Include="fw\source\interrupt.c" />
+    <ClCompile Include="fw\source\M_SPI.c" />
+    <ClCompile Include="fw\source\pba.c" />
+    <ClCompile Include="fw\source\pba_test.c" />
+    <ClCompile Include="fw\source\pba_vc.c" />
+    <ClCompile Include="fw\source\PH_AP.C" />
+    <ClCompile Include="fw\source\SCSI_CMD.c" />
+    <ClCompile Include="fw\source\SPI_Flash.c" />
+    <ClCompile Include="fw\source\Sys.c" />
+    <ClCompile Include="fw\source\usb.c" />
+    <ClCompile Include="fw\source\UsbBot.c" />
+    <ClCompile Include="fw\source\USB_String.c" />
+    <ClCompile Include="fw\source\WDT.c" />
     <ClCompile Include="nes_fw.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="fw\include\8051.H" />
+    <ClInclude Include="fw\include\a.h" />
+    <ClInclude Include="fw\include\All.h" />
+    <ClInclude Include="fw\include\basetype.h" />
+    <ClInclude Include="fw\include\Buf_DEF.H" />
+    <ClInclude Include="fw\include\DMA_Reg.h" />
+    <ClInclude Include="fw\include\FW_Info.h" />
+    <ClInclude Include="fw\include\GPIO_API.h" />
+    <ClInclude Include="fw\include\GPIO_Reg.h" />
+    <ClInclude Include="fw\include\HOST.h" />
+    <ClInclude Include="fw\include\Interrupt_API.h" />
+    <ClInclude Include="fw\include\IO_Macro.h" />
+    <ClInclude Include="fw\include\MCU_Reg.h" />
+    <ClInclude Include="fw\include\MSPI_API.H" />
+    <ClInclude Include="fw\include\M_SPI_Reg.h" />
+    <ClInclude Include="fw\include\Operator.h" />
+    <ClInclude Include="fw\include\pba.h" />
+    <ClInclude Include="fw\include\pba_api.h" />
+    <ClInclude Include="fw\include\pba_test.h" />
+    <ClInclude Include="fw\include\pba_test_api.h" />
+    <ClInclude Include="fw\include\pba_vc.h" />
+    <ClInclude Include="fw\include\pba_vc_api.h" />
+    <ClInclude Include="fw\include\PH_AP_API.H" />
+    <ClInclude Include="fw\include\PRAM_Def.h" />
+    <ClInclude Include="fw\include\SCSI_CMD_API.h" />
+    <ClInclude Include="fw\include\SCSI_Table.h" />
+    <ClInclude Include="fw\include\SPI_Flash_API.h" />
+    <ClInclude Include="fw\include\SPI_Flash_Reg.h" />
+    <ClInclude Include="fw\include\SPI_ROM.h" />
+    <ClInclude Include="fw\include\Sys_API.h" />
+    <ClInclude Include="fw\include\UART_API.h" />
+    <ClInclude Include="fw\include\UsbReg.h" />
+    <ClInclude Include="fw\include\USB_API.h" />
+    <ClInclude Include="fw\include\USB_Def.h" />
+    <ClInclude Include="fw\include\USB_String.h" />
+    <ClInclude Include="fw\include\Var_def.h" />
+    <ClInclude Include="fw\include\WDT_API.h" />
+    <ClInclude Include="fw\include\WDT_Reg.h" />
+    <ClInclude Include="nes.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

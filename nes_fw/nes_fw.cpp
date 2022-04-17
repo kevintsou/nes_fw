@@ -2,8 +2,8 @@
 //
 
 #include <iostream>
+#include "nes.h"
 
-#define D_NES_CMODEL
 #ifdef D_NES_CMODEL
 #include "nes_cmodel.h"
 #pragma comment(lib, "nes_cmodel.lib")
