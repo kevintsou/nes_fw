@@ -178,7 +178,7 @@ BYTE memcpy_DMA(UINT8 ab_Sur_Page, UINT8 ab_Des_Page, UINT32 al_len)
 
     //-------------------------------------------------------------------------------------------------
 
-    while (DMAREG[DMA_CTRL] & 0x07);
+    //while (DMAREG[DMA_CTRL] & 0x07);
 
 
     return 0;

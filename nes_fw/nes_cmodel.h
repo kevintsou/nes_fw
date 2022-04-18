@@ -3,6 +3,11 @@
 #define _OUT (int)
 #define _IN	(unsigned int)
 
+#define u64_t unsigned long
+#define u32_t unsigned int
+#define u16_t unsigned short
+#define u8_t  unsigned char
+
 #ifdef __cplusplus
 class REG
 {
@@ -13,7 +18,7 @@ public:
 	virtual REG& operator[](unsigned int addr);
 	virtual int operator[](int regaddr);
 
-	int* _pReg_mem;
+	char* _pReg_mem;
 	int	regIdx;
 	int regBar;
 };
@@ -50,7 +55,7 @@ private:
 	unsigned char (C_DMAREG::* _pOPRFunc)(unsigned char);
 
 	int defCallback(int v);
-	unsigned char callfundef(unsigned char v);
+	unsigned char funcDmaCtrl(unsigned char v);
 	unsigned char callfun1(unsigned char v);
 	unsigned char callfun2(unsigned char v);
 
