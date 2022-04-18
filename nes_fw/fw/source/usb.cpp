@@ -1,6 +1,8 @@
 #include "nes.h"
 #ifdef D_NES_CMODEL
 #include "8051.h"
+#include "nes_cmodel.h"
+#pragma comment(lib, "nes_cmodel.lib")
 #else
 #include <reg52.h>
 #include <8051.h>
@@ -25,6 +27,9 @@
 #include "basetype.h"
 #include "a.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 //==================================================================================================================
 
 BYTE xdata gb_Interface;
@@ -1414,7 +1419,7 @@ void USBBulkOutSectorToPageBuffer(BYTE Buf_No, SWORD Sec_Cnt, BYTE Buf_Mode)
 
 void Send_Link_Err_Count(void)
 {
-    xdata BYTE *rb_ptr = 0x20000;
+    xdata BYTE *rb_ptr = (BYTE *)0x20000;
 
     rb_ptr[0] = gb_Link_Error_count;
 
@@ -1536,7 +1541,7 @@ void Init_PBA()
   //IOW F12F 20, PLL EN
   CLKREG[CLK_WUCNT] = 0x20;
   //IOW F180 55, test wr
-  DMAREG[DMA_SRHB_L] = 0x55;
+  DMAREG[_IN DMA_SRHB_L] = 0x55;
 
   //IOW F000 80, PBA RST
   PBAREG[CRBYTE0] = 0x80;//0x80;
@@ -1560,4 +1565,6 @@ void Init_PBA()
 
 }
 
-
+#ifdef __cplusplus
+}
+#endif

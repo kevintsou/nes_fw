@@ -33,7 +33,7 @@ void SPIISP(void)
     BYTE *rb_ptr;
     //Print_Debug_Message(__MSG_LEVEL_FUN_NAME__,"[==>Fun: SPIISP()]");
 
-    rb_ptr = 0x20000;
+    rb_ptr = (BYTE*)0x20000;
 
     if (!gi_SPIFlash_Initialed) {
         SPIFlash_Initial();
@@ -280,43 +280,47 @@ void Access_Reg(UINT8 R_W_SEL, UINT8 Item_SEL, UINT8 Addr, UINT8 Value)
     switch (Item_SEL) {
             //case  0: tmp_Addr = _TEMP_;   break;  // MMC/SD/UHS2
         case  1:
-            tmp_Addr = CLKREG;
+            tmp_Addr = (BYTE*)CLKREG;
             break;  // CLK
 
         case  2:
-            tmp_Addr = SYSREG;
+            tmp_Addr = (BYTE*)SYSREG;
             break;  // SYS
 
         case  3:
+#ifdef D_NES_CMODEL
+            tmp_Addr = (BYTE*)DMAREG.regBar;    // KTTBD
+#else
             tmp_Addr = DMAREG;
+#endif
             break;  // DMA
 
         case  4:
-            tmp_Addr = BRAREG;
+            tmp_Addr = (BYTE*)BRAREG;
             break;  // RA
 
             //case  5: tmp_Addr = _TEMP_;     break;    // AES
             //case  6: tmp_Addr = _TEMP_;     break;    // SHA
         case  7:
-            tmp_Addr = SDRAM_;
+            tmp_Addr = (BYTE*)SDRAM_;
             break;  // SDRAM
 
               //case  9: tmp_Addr = _TEMP_;       break;  // OTP
         case 10:
-            tmp_Addr = WDTREG;
+            tmp_Addr = (BYTE*)WDTREG;
             break;  // WDT
 
             // case 11: tmp_Addr = I2CREG;     break;    // I2C
         case 12:
-            tmp_Addr = GPIOREG;
+            tmp_Addr = (BYTE*)GPIOREG;
             break;  // GPIO
 
         case 13:
-            tmp_Addr = SPIREG;
+            tmp_Addr = (BYTE*)SPIREG;
             break;  // SPI
 
         case 14:
-            tmp_Addr = M_SPIREG;
+            tmp_Addr = (BYTE*)M_SPIREG;
             break;  // RSPI
 
         default:
@@ -329,7 +333,7 @@ void Access_Reg(UINT8 R_W_SEL, UINT8 Item_SEL, UINT8 Addr, UINT8 Value)
         tmp_Addr[Addr] = Value;
     } else {
         // 0-Read
-        memcpy(PAGE2MEM_CHAR(MEM_SDMMC_DATA_PAGE), tmp_Addr, 512);
+        memcpy((void *)PAGE2MEM_CHAR(MEM_SDMMC_DATA_PAGE), tmp_Addr, 512);
         USBBulkInSectorFromPageBuffer(MEM_SDMMC_DATA_PAGE, 1, 0);
     }
 }

@@ -22,13 +22,14 @@ Date        Author          Version  Descrption
  */
 
 #define __PBA_VC_C__
-
 /*--------------------------------------------------------------------------*/
 /* INCLUDE FILE                                                             */
 /*--------------------------------------------------------------------------*/
 #include "nes.h"
 #ifdef D_NES_CMODEL
 #include "8051.h"
+#include "nes_cmodel.h"
+#pragma comment(lib, "nes_cmodel.lib")
 #else
 #include <reg52.h>
 #include <8051.h>
@@ -60,6 +61,8 @@ Date        Author          Version  Descrption
 #include "DMA_Reg.h"
 #include "Operator.h"
 #include "a.h"
+
+
 
 U8 xdata gb_Host_MDLL_Mode;
 U8 xdata gb_Host_MDLL_L;
@@ -156,22 +159,22 @@ BYTE memcpy_DMA(UINT8 ab_Sur_Page, UINT8 ab_Des_Page, UINT32 al_len)
 {
 
     //-------------------------------------------------------------------------------------------------
-    DMAREG[DMA_SRHB_H] = INT_BYTE2(Convert_Page2BufAddr(ab_Sur_Page));  // Set DMA Source Addr
-    DMAREG[DMA_SRHB_M] = INT_BYTE1(Convert_Page2BufAddr(ab_Sur_Page));
-    DMAREG[DMA_SRHB_L] = INT_BYTE0(Convert_Page2BufAddr(ab_Sur_Page));
+    DMAREG[_IN DMA_SRHB_H] = INT_BYTE2(Convert_Page2BufAddr(ab_Sur_Page));  // Set DMA Source Addr
+    DMAREG[_IN DMA_SRHB_M] = INT_BYTE1(Convert_Page2BufAddr(ab_Sur_Page));
+    DMAREG[_IN DMA_SRHB_L] = INT_BYTE0(Convert_Page2BufAddr(ab_Sur_Page));
 
     //-------------------------------------------------------------------------------------------------
-    DMAREG[DMA_SRHE_H] = INT_BYTE2(Convert_Page2BufAddr(ab_Des_Page));  // Set DMA Destination Addr
-    DMAREG[DMA_SRHE_M] = INT_BYTE1(Convert_Page2BufAddr(ab_Des_Page));
-    DMAREG[DMA_SRHE_L] = INT_BYTE0(Convert_Page2BufAddr(ab_Des_Page));
+    DMAREG[_IN DMA_SRHE_H] = INT_BYTE2(Convert_Page2BufAddr(ab_Des_Page));  // Set DMA Destination Addr
+    DMAREG[_IN DMA_SRHE_M] = INT_BYTE1(Convert_Page2BufAddr(ab_Des_Page));
+    DMAREG[_IN DMA_SRHE_L] = INT_BYTE0(Convert_Page2BufAddr(ab_Des_Page));
 
     //-------------------------------------------------------------------------------------------------
-    DMAREG[DMA_LEN_H] = INT_BYTE2(al_len);  // Set DMA Length
-    DMAREG[DMA_LEN_M] = INT_BYTE1(al_len);
-    DMAREG[DMA_LEN_L] = INT_BYTE0(al_len);
+    DMAREG[_IN DMA_LEN_H] = INT_BYTE2(al_len);  // Set DMA Length
+    DMAREG[_IN DMA_LEN_M] = INT_BYTE1(al_len);
+    DMAREG[_IN DMA_LEN_L] = INT_BYTE0(al_len);
 
     //-------------------------------------------------------------------------------------------------
-    DMAREG[DMA_CTRL] = OP_COPY; // Trigger DMA Copy
+    DMAREG[_IN DMA_CTRL] = OP_COPY; // Trigger DMA Copy
 
     //-------------------------------------------------------------------------------------------------
 

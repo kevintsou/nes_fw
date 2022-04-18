@@ -2,7 +2,12 @@
 #define __DMA_REG_H__
 //==================================================================================================================
 
+#ifndef D_NES_CMODEL
 #define DMAREG ((volatile unsigned char *)0x2F180UL)
+#else
+#include "nes_cmodel.h"
+#pragma comment(lib, "nes_cmodel.lib")
+#endif
 //==================================================================================================================
 
 #define DMA_SRHB_L              0x00    /* Operation Start/Source Address Low */

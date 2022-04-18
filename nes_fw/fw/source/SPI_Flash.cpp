@@ -293,7 +293,7 @@ void SPIFlash_ReadStatus()
     BYTE *rb_ptr;
 
     SPIREG[SPI_MST_TRIG] |= 0x80;
-    rb_ptr = 0x20000;
+    rb_ptr = (BYTE*)0x20000;
     *rb_ptr = SPIFlash_RDSR();
 
     USBBulkInSectorFromPageBuffer(0x80, 1, 0);
@@ -610,7 +610,7 @@ void SPIFlash_Read(BYTE ab_PRAM, BYTE ab_Shift, BYTE ab_USB)
 void SPIFLASH_PROGRAM(BYTE ab_Shift)
 {
     SWORD rb_Loop;
-    BYTE *rb_ptr = 0x24000;
+    BYTE *rb_ptr = (BYTE*)0x24000;
     TDWORD rl_LBA_Offset;
 
     SPIREG[SPI_MST_TRIG] |= 0x80;

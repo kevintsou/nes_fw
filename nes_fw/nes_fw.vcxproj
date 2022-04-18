@@ -140,21 +140,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="fw\source\cmain.c" />
-    <ClCompile Include="fw\source\GPIO.c" />
-    <ClCompile Include="fw\source\interrupt.c" />
-    <ClCompile Include="fw\source\M_SPI.c" />
-    <ClCompile Include="fw\source\pba.c" />
-    <ClCompile Include="fw\source\pba_test.c" />
-    <ClCompile Include="fw\source\pba_vc.c" />
-    <ClCompile Include="fw\source\PH_AP.C" />
-    <ClCompile Include="fw\source\SCSI_CMD.c" />
-    <ClCompile Include="fw\source\SPI_Flash.c" />
-    <ClCompile Include="fw\source\Sys.c" />
-    <ClCompile Include="fw\source\usb.c" />
-    <ClCompile Include="fw\source\UsbBot.c" />
-    <ClCompile Include="fw\source\USB_String.c" />
-    <ClCompile Include="fw\source\WDT.c" />
+    <ClCompile Include="fw\source\cmain.cpp" />
+    <ClCompile Include="fw\source\GPIO.cpp" />
+    <ClCompile Include="fw\source\interrupt.cpp" />
+    <ClCompile Include="fw\source\M_SPI.cpp" />
+    <ClCompile Include="fw\source\pba.cpp" />
+    <ClCompile Include="fw\source\pba_test.cpp" />
+    <ClCompile Include="fw\source\pba_vc.cpp" />
+    <ClCompile Include="fw\source\PH_AP.cpp" />
+    <ClCompile Include="fw\source\SCSI_CMD.cpp" />
+    <ClCompile Include="fw\source\SPI_Flash.cpp" />
+    <ClCompile Include="fw\source\Sys.cpp" />
+    <ClCompile Include="fw\source\usb.cpp" />
+    <ClCompile Include="fw\source\UsbBot.cpp" />
+    <ClCompile Include="fw\source\USB_String.cpp" />
+    <ClCompile Include="fw\source\WDT.cpp" />
     <ClCompile Include="nes_fw.cpp" />
   </ItemGroup>
   <ItemGroup>

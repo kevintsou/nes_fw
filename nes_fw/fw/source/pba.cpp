@@ -498,7 +498,7 @@ void pba_initial_sys_reg(void)
 
     //IOW F180 55, test wr
     //???
-    DMAREG[DMA_SRHB_L] = 0x55;
+    DMAREG[_IN DMA_SRHB_L] = 0x55;
 
 
     

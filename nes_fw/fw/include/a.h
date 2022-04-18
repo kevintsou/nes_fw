@@ -2,9 +2,6 @@
 #define _A_H
 #include "BaseType.h"
 #include "nes.h"
-#ifdef __cplusplus
-extern "C" {
-#endif
 
 extern bit gbDoCSW,gbEPxHalt,gbBadBulkCmd;
 extern bit MassDirection;
@@ -47,9 +44,4 @@ extern xdata unsigned int SEC_CNT;
 extern xdata unsigned char gucxMaxCard;
 extern xdata union LongLBA LBA2;
 
-
-
-#ifdef __cplusplus
-}
-#endif
 #endif

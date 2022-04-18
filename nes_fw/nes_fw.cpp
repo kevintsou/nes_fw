@@ -12,6 +12,23 @@
 #define _IN	
 #endif
 
+int P1;
+int TMOD;
+int TH0;
+int TH1;
+int TL1;
+int IP;
+int TCON;
+int SCON;
+int IE;
+int EX1;
+int EX0;
+int TR0;
+int TL0;
+int RI;
+int TI;
+int IE0;
+int IE1;
 
 int testCode() {
 	//REG_R16 R16_MR_QINFO(123);

@@ -18,49 +18,49 @@
     <ClCompile Include="nes_fw.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="fw\source\cmain.c">
+    <ClCompile Include="fw\source\pba_vc.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="fw\source\GPIO.c">
+    <ClCompile Include="fw\source\pba.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="fw\source\interrupt.c">
+    <ClCompile Include="fw\source\usb.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="fw\source\M_SPI.c">
+    <ClCompile Include="fw\source\cmain.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="fw\source\pba.c">
+    <ClCompile Include="fw\source\GPIO.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="fw\source\pba_test.c">
+    <ClCompile Include="fw\source\interrupt.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="fw\source\pba_vc.c">
+    <ClCompile Include="fw\source\M_SPI.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="fw\source\PH_AP.C">
+    <ClCompile Include="fw\source\pba_test.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="fw\source\SCSI_CMD.c">
+    <ClCompile Include="fw\source\PH_AP.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="fw\source\SPI_Flash.c">
+    <ClCompile Include="fw\source\SCSI_CMD.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="fw\source\Sys.c">
+    <ClCompile Include="fw\source\SPI_Flash.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="fw\source\usb.c">
+    <ClCompile Include="fw\source\Sys.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="fw\source\USB_String.c">
+    <ClCompile Include="fw\source\USB_String.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="fw\source\UsbBot.c">
+    <ClCompile Include="fw\source\UsbBot.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
-    <ClCompile Include="fw\source\WDT.c">
+    <ClCompile Include="fw\source\WDT.cpp">
       <Filter>來源檔案</Filter>
     </ClCompile>
   </ItemGroup>
