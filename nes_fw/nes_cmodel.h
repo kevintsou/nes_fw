@@ -32,11 +32,10 @@ public:
 	REG_R16(int inv);
 	~REG_R16();
 
-	int operator=(int v);
-
 	int operator[](int regaddr);
 	REG_R16& operator[](unsigned int addr);
 
+	int operator=(int v);
 	REG& operator|=(REG b);
 	REG& operator|=(int i);
 	REG& operator&=(REG b);
@@ -51,5 +50,5 @@ extern REG_R16 R16_MR_QINFO;
 /*
 	function declaration
 */
-int initCmodelMem();
-int initCmodelReg();
+extern int initCmodelMem();
+extern int initCmodelReg();
