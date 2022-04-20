@@ -42,38 +42,38 @@
 
 //16K storage Buffer mapping
 //#define MEM_SDMMC_DATA_PAGE           0xCB    //- 0x29600, 16K Length
-#define BUFF00_                 ((volatile unsigned char *)0x29600UL)
-#define BUFF01_                 ((volatile unsigned char *)0x29800UL)
-#define BUFF02_                 ((volatile unsigned char *)0x29A00UL)
-#define BUFF03_                 ((volatile unsigned char *)0x29C00UL)
-#define BUFF04_                 ((volatile unsigned char *)0x29E00UL)
-#define BUFF05_                 ((volatile unsigned char *)0x2A000UL)
-#define BUFF06_                 ((volatile unsigned char *)0x2A200UL)
-#define BUFF07_                 ((volatile unsigned char *)0x2A400UL)
-#define BUFF08_                 ((volatile unsigned char *)0x2A600UL)
-#define BUFF09_                 ((volatile unsigned char *)0x2A800UL)
-#define BUFF0A_                 ((volatile unsigned char *)0x2AA00UL)
-#define BUFF0B_                 ((volatile unsigned char *)0x2AC00UL)
-#define BUFF0C_                 ((volatile unsigned char *)0x2AE00UL)
-#define BUFF0D_                 ((volatile unsigned char *)0x2B000UL)
-#define BUFF0E_                 ((volatile unsigned char *)0x2B200UL)
-#define BUFF0F_                 ((volatile unsigned char *)0x2B400UL)
-#define BUFF10_                 ((volatile unsigned char *)0x2B600UL)
-#define BUFF11_                 ((volatile unsigned char *)0x2B800UL)
-#define BUFF12_                 ((volatile unsigned char *)0x2BA00UL)
-#define BUFF13_                 ((volatile unsigned char *)0x2BC00UL)
-#define BUFF14_                 ((volatile unsigned char *)0x2BE00UL)
-#define BUFF15_                 ((volatile unsigned char *)0x2C000UL)
-#define BUFF16_                 ((volatile unsigned char *)0x2C200UL)
-#define BUFF17_                 ((volatile unsigned char *)0x2C400UL)
-#define BUFF18_                 ((volatile unsigned char *)0x2C600UL)
-#define BUFF19_                 ((volatile unsigned char *)0x2C800UL)
-#define BUFF1A_                 ((volatile unsigned char *)0x2CA00UL)
-#define BUFF1B_                 ((volatile unsigned char *)0x2CC00UL)
-#define BUFF1C_                 ((volatile unsigned char *)0x2CE00UL)
-#define BUFF1D_                 ((volatile unsigned char *)0x2D000UL)
-#define BUFF1E_                 ((volatile unsigned char *)0x2D200UL)
-#define BUFF1F_                 ((volatile unsigned char *)0x2D400UL)
+#define BUFF00_                 ((volatile unsigned char *)(0x29600UL+BUF_BAR))
+#define BUFF01_                 ((volatile unsigned char *)(0x29800UL+BUF_BAR))
+#define BUFF02_                 ((volatile unsigned char *)(0x29A00UL+BUF_BAR))
+#define BUFF03_                 ((volatile unsigned char *)(0x29C00UL+BUF_BAR))
+#define BUFF04_                 ((volatile unsigned char *)(0x29E00UL+BUF_BAR))
+#define BUFF05_                 ((volatile unsigned char *)(0x2A000UL+BUF_BAR))
+#define BUFF06_                 ((volatile unsigned char *)(0x2A200UL+BUF_BAR))
+#define BUFF07_                 ((volatile unsigned char *)(0x2A400UL+BUF_BAR))
+#define BUFF08_                 ((volatile unsigned char *)(0x2A600UL+BUF_BAR))
+#define BUFF09_                 ((volatile unsigned char *)(0x2A800UL+BUF_BAR))
+#define BUFF0A_                 ((volatile unsigned char *)(0x2AA00UL+BUF_BAR))
+#define BUFF0B_                 ((volatile unsigned char *)(0x2AC00UL+BUF_BAR))
+#define BUFF0C_                 ((volatile unsigned char *)(0x2AE00UL+BUF_BAR))
+#define BUFF0D_                 ((volatile unsigned char *)(0x2B000UL+BUF_BAR))
+#define BUFF0E_                 ((volatile unsigned char *)(0x2B200UL+BUF_BAR))
+#define BUFF0F_                 ((volatile unsigned char *)(0x2B400UL+BUF_BAR))
+#define BUFF10_                 ((volatile unsigned char *)(0x2B600UL+BUF_BAR))
+#define BUFF11_                 ((volatile unsigned char *)(0x2B800UL+BUF_BAR))
+#define BUFF12_                 ((volatile unsigned char *)(0x2BA00UL+BUF_BAR))
+#define BUFF13_                 ((volatile unsigned char *)(0x2BC00UL+BUF_BAR))
+#define BUFF14_                 ((volatile unsigned char *)(0x2BE00UL+BUF_BAR))
+#define BUFF15_                 ((volatile unsigned char *)(0x2C000UL+BUF_BAR))
+#define BUFF16_                 ((volatile unsigned char *)(0x2C200UL+BUF_BAR))
+#define BUFF17_                 ((volatile unsigned char *)(0x2C400UL+BUF_BAR))
+#define BUFF18_                 ((volatile unsigned char *)(0x2C600UL+BUF_BAR))
+#define BUFF19_                 ((volatile unsigned char *)(0x2C800UL+BUF_BAR))
+#define BUFF1A_                 ((volatile unsigned char *)(0x2CA00UL+BUF_BAR))
+#define BUFF1B_                 ((volatile unsigned char *)(0x2CC00UL+BUF_BAR))
+#define BUFF1C_                 ((volatile unsigned char *)(0x2CE00UL+BUF_BAR))
+#define BUFF1D_                 ((volatile unsigned char *)(0x2D000UL+BUF_BAR))
+#define BUFF1E_                 ((volatile unsigned char *)(0x2D200UL+BUF_BAR))
+#define BUFF1F_                 ((volatile unsigned char *)(0x2D400UL+BUF_BAR))
 
 //------------------------------------------------------------------------------------
 
@@ -231,12 +231,13 @@
 #define USBEPNBUF_LEN0                      0x40
 #define USBEPNBUF_LEN1                      0x00
 */
-
+//extern int mem_bar;
+//#define MEM_BAR	mem_bar
 // Buffer 128(0x80)
 // Size : 1 buffer(512 bytes)
 // purpose : FAT MBR use
 #define FLAG_BASENO_FAT_MBR             0x80
-#define FAT_MBR_ADR         0x20000UL
+#define FAT_MBR_ADR         (0x20000UL + MEM_BAR)
 #define FAT_MBR_Base        ((unsigned char *)FAT_MBR_ADR)
 
 // Buffer 129~132(0x81~0x84), 0x2200~0x29FF
@@ -256,21 +257,21 @@
 // Size : 2 buffer(1024 bytes)
 // purpose : CFDE use
 #define FLAG_BASENO_CFDE_BLK            0x86
-#define CFDE_BLK_ADR        0x20C00UL
+#define CFDE_BLK_ADR        (0x20C00UL + MEM_BAR)
 #define CFDE_BLK_Base       ((unsigned char *)CFDE_BLK_ADR)
 
 // Buffer 136~139(0x88~0x8B)
 // Size : 4 buffer(2048 bytes)
 // purpose : Info Page use
 #define FLAG_BASENO_INFO_PAGE           0x88
-#define INFO_PAGE_ADR       0x21000UL
+#define INFO_PAGE_ADR       (0x21000UL + MEM_BAR)
 #define INFO_PAGE_Base      ((unsigned char *)INFO_PAGE_ADR)
 
 // Buffer 140~141(0x8C~0x8D)
 // Size : 2 buffer(1024 bytes)
 // purpose : Set Ready use
 #define FLAG_BASENO_SET_RDY             0x8C
-#define SET_RDY_ADR         0x21800UL
+#define SET_RDY_ADR         (0x21800UL + MEM_BAR)
 #define SET_RDY_Base        ((unsigned char *)SET_RDY_ADR)
 
 
@@ -282,21 +283,21 @@
 // Size : 38 buffer(19K bytes)
 // purpose : empty system info use
 #define FLAG_BASENO_REQ_BLK            0x98
-#define REQ_BLK_ADR         0x23000UL
+#define REQ_BLK_ADR         (0x23000UL + MEM_BAR)
 #define REQ_BLK_Base        ((unsigned char *)REQ_BLK_ADR)
 
 // Buffer 152~191(0x98~0xBF)
 // Size : 40 buffer(20K bytes)
 // purpose : temp buffer use
 #define BUF_NUM_TEMP_BUF                0x98
-#define BASE_ADDR_TEMP_BUF  0x23000UL
+#define BASE_ADDR_TEMP_BUF  (0x23000UL + MEM_BAR)
 #define TEMP_BUF            ((unsigned char *)BASE_ADDR_TEMP_BUF)
 
 // Buffer 192~255(0xC0~0xFF)
 // Size : 64 buffer(32K bytes)
 // purpose : ???
 #define FLAG_BASENO_PBA_CACHE           0xC0
-#define PBA_CACHE_ADR       0x28000UL
+#define PBA_CACHE_ADR       (0x28000UL + MEM_BAR)
 #define PBA_Cache_Buf       ((unsigned char *)PBA_CACHE_ADR)
 
 

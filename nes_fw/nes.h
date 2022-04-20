@@ -11,6 +11,11 @@
 #define sfr	extern int //special function register
 #define sbit extern int
 
+#define MEM_BAR	((unsigned long)mem_bar - 0x20000UL)
+#define BUF_BAR ((unsigned long long)buf_bar - 0x29000UL)
+//extern unsigned char* MEM_BAR;
+//extern unsigned char* BUF_BAR;
+
 extern int P1;
 extern int TMOD;
 extern int TH0;
@@ -28,4 +33,7 @@ extern int RI;
 extern int TI;
 extern int IE0;
 extern int IE1;
+
+extern int* mem_bar;
+extern int* buf_bar;
 #endif

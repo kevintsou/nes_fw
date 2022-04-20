@@ -32,9 +32,15 @@ int TI;
 int IE0;
 int IE1;
 
+
+
 extern BYTE memcpy_DMA(UINT8 ab_Sur_Page, UINT8 ab_Des_Page, UINT32 al_len);
 
 int testCode() {
+	buf_bar[0x2A400UL - 0x29000UL] = 1;
+	unsigned long long test = (0x2A400UL + BUF_BAR);
+	((volatile unsigned char*)(test))[0] = 1;
+	BUFF12_[100] = 100;
 
 	memcpy_DMA(FLAG_BASENO_PBA_CACHE, BUF_NUM_TEMP_BUF, (512 * SYS_INFO_SIZE));
 
